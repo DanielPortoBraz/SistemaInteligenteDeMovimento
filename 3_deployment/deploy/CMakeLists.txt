@@ -38,7 +38,12 @@ add_subdirectory(pico-tflmicro EXCLUDE_FROM_ALL)
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(deploy deploy.cpp )
+add_executable(deploy 
+    main.c
+    src/mpu6500.c
+    src/features.c
+    src/ai_core.cpp
+)
 
 pico_set_program_name(deploy "deploy")
 pico_set_program_version(deploy "0.1")
